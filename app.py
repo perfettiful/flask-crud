@@ -13,7 +13,7 @@ import pymysql as MySQLdb
 from datetime import datetime
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('JAWSDB_URL')
+app.config['SQLALCHEMY_DATABASE_URI'] = sqlURL
 
 
 # app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
