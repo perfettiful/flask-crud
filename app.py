@@ -1,5 +1,12 @@
 import os
 
+is_prod = os.environ.get('IS_HEROKU', None)
+
+if is_prod:
+    sqlURL = os.environ['JAWSDB_URL']
+else: 
+    sqlURL = os.environ.get('JAWSDB_URL')
+
 from flask import Flask, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 import pymysql as MySQLdb
