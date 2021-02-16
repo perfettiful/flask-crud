@@ -14,6 +14,7 @@ gunicorn = "*"
 python-dotenv = "*"
 pymysql = "*"
 flask-heroku = "*"
+mysqlclient = "*"
 
 [requires]
 python_version = "3.6"
