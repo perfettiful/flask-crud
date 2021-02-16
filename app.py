@@ -5,7 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = sqlURL
+app.config['SQLALCHEMY_DATABASE_URI'] = sqlURL or 'mysql://trggzzxsal5pfuhy:uortzaowx45j5jtd@d6rii63wp64rsfb5.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/l6s0pv9wrx2b4z3b'
 
 db = SQLAlchemy(app)
 
