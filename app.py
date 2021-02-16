@@ -1,7 +1,5 @@
 import os
-
 sqlURL = os.environ.get('JAWSDB_URL')
-
 from flask import Flask, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
