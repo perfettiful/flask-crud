@@ -15,6 +15,7 @@ python-dotenv = "*"
 pymysql = "*"
 flask-heroku = "*"
 mysqlclient = "*"
+requests = "*"
 
 [requires]
 python_version = "3.6"

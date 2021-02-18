@@ -1,12 +1,20 @@
 import os
+from os.path import join, dirname
+from dotenv import load_dotenv
+dotenv_path = join(dirname(__file__), '.env')
+load_dotenv(dotenv_path)
 
 if os.environ.get('JAWSDB_URL'):
     sqlURL = os.environ.get('JAWSDB_URL')
+
+if os.getenv('JAWSDB_URL'):
+    sqlURL = os.getenv('JAWSDB_URL')
 
 from flask import Flask, render_template, request, redirect
 
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
+import requests
 
 app = Flask(__name__)
 
@@ -23,6 +31,12 @@ class Grocery_DB(db.Model):
 
     def __repr__(self):
         return '<Grocery_DB %r>' % self.name
+
+
+@app.route('/json',methods=['GET'])
+def json():
+
+    return requests.get('https://jsonplaceholder.typicode.com/todos/1').json()
 
 
 @app.route('/', methods=['GET', 'POST'])
